@@ -1,0 +1,135 @@
+.websters-select {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 100%;
+  height: 43px;
+  border: 1px solid #e1e1e1;
+  background: transparent;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 300;
+  font-style: normal;
+  color: rgba(0,0,0,0.5);
+
+  &_opened {
+
+    .websters-select__arrow {
+      transform: rotate(180deg);
+    }
+
+  }
+
+  &__arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY( -50% );
+    right: 14px;
+    height: 9px;
+    width: 13px;
+    transform-origin: 50% 25%;
+    -webkit-transition: -webkit-transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
+
+    &:after,
+    &:before {
+      position: absolute;
+      top: 4px;
+      width: 8px;
+      height: 1px;
+      background: #7f7f7f;
+      content: '';
+    }
+
+    &:after {
+      left: 0;
+      transform: rotate(45deg);
+
+    }
+
+    &:before {
+      right: 0;
+      transform: rotate(-45deg);
+
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    //@include absoluteCenterY();
+    position: absolute;
+    top: 50%;
+    transform: translateY( -50% );
+    right: 27px;
+    left: 15px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+
+  &_mobile {
+
+    select {
+      position: absolute;
+      top: 0;
+      bottom: -1px;
+      left: 1px;
+      width: 100%;
+    }
+
+  }
+
+  &_custom {
+
+    select {
+      position: absolute;
+      left: -100000px;
+    }
+
+  }
+
+  &__popup {
+    overflow: hidden;
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: -2px;
+    z-index: 10;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
+    font-style: normal;
+    color: rgba(0,0,0,0.5);
+
+
+    ul {
+      z-index: 1;
+    }
+
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 10px 15px;
+
+      &:hover {
+        //color: $websters-select-popup-item-active-color;
+        //background: $websters-select-popup-item-active-back;
+      }
+
+      &.active {
+        //color: $websters-select-popup-item-active-color !important;
+        //background: $websters-select-popup-item-active-back !important;
+      }
+
+    }
+
+  }
+
+}
