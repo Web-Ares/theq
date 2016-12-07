@@ -33,6 +33,7 @@
     }
   }
   textarea {
+    padding: 20px 15px 4px;
     height: 135px;
   }
 }
@@ -86,6 +87,8 @@
     font-size: 16px;
     line-height: 16px;
     color: rgba(0,0,0,0.5);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   &.checkout__fields_focus {
@@ -118,6 +121,7 @@
   margin: 0 0 33px;
 }
 .checkout__order-pic {
+  display: block;
   max-width: 200px;
   margin: 0 auto;
   padding: 30px;

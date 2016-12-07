@@ -1,0 +1,58 @@
+.confirmation {
+  font-size: 16px;
+  line-height: 30px;
+  color: #878686;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  strong {
+    font-weight: 300;
+  }
+
+  .woocommerce-thankyou-order-details{
+    list-style: none;
+  }
+  .checkout__success-data {
+    padding: 0;
+    line-height: 30px;
+  }
+
+}
+.confirmation___home-page {
+  padding: 25px 0;
+  text-align: center;
+
+  .red-btn {
+    width: 100%;
+    max-width: 242px;
+    height: 46px;
+    padding: 16px 35px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+
+  }
+
+}
+
+
+@media (min-width: 1024px) {
+
+  .confirmation {
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+}
+

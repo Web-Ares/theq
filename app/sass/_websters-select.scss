@@ -12,8 +12,11 @@
   font-weight: 300;
   font-style: normal;
   color: rgba(0,0,0,0.5);
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
 
   &_opened {
+    border-color: #707070;
 
     .websters-select__arrow {
       transform: rotate(180deg);
@@ -98,7 +101,7 @@
     top: -2px;
     z-index: 10;
     box-sizing: border-box;
-    border: 1px solid #e1e1e1;
+    border: 1px solid #707070;
     background: #fff;
     font-size: 16px;
     line-height: 16px;
@@ -117,15 +120,17 @@
       overflow: hidden;
       cursor: pointer;
       padding: 10px 15px;
+      -webkit-transition: background 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
 
       &:hover {
-        //color: $websters-select-popup-item-active-color;
-        //background: $websters-select-popup-item-active-back;
+        color: #fff;
+        background: #707070;
       }
 
       &.active {
-        //color: $websters-select-popup-item-active-color !important;
-        //background: $websters-select-popup-item-active-back !important;
+        color: #fff;
+        background: #707070;
       }
 
     }
