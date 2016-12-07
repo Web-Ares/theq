@@ -420,6 +420,32 @@
   }
 
 }
+.billing_current_states {
+  input[type="submit"],
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select,
+  input[type="email"],
+  input[type="tel"],
+  input[type="phone"],
+  input[type="number"] {
+    padding: 8px 15px;
+  }
+}
+.shipping_current_states {
+  input[type="submit"],
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select,
+  input[type="email"],
+  input[type="tel"],
+  input[type="phone"],
+  input[type="number"] {
+    padding: 8px 15px;
+  }
+}
 
 @media (min-width: 1024px) {
 
