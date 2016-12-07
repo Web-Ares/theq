@@ -3,6 +3,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #9e9e9e;
+  counter-reset: list;
 
   input[type="submit"],
   input[type="text"],
@@ -38,7 +39,7 @@
   }
 }
 .checkout__main-info {
-  counter-reset: list;
+
 
   .checkout__title {
     padding: 0 41px;
@@ -416,10 +417,12 @@
     -moz-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -ms-flex-align: start;
     -moz-align-items: flex-start;
     align-items: flex-start;
-    -ms-flex-pack: justify;
+    -ms-flex-pack: start;
     -moz-justify-content: space-between;
     justify-content: space-between;
     padding: 0;
