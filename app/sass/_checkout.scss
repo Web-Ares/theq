@@ -9,6 +9,7 @@
   input[type="text"],
   input[type="password"],
   textarea,
+  select,
   input[type="email"],
   input[type="tel"],
   input[type="phone"],
@@ -21,8 +22,9 @@
     padding: 14px 15px 4px;
     font-size: 16px;
     line-height: 16px;
-    border-radius: 0;
+    border-radius: 0 !important;
     color: #000;
+    outline: none !important;
     font-family: 'Roboto', sans-serif !important;
     font-weight: 300;
     font-style: normal;
@@ -36,6 +38,17 @@
   textarea {
     padding: 20px 15px 4px;
     height: 135px;
+  }
+
+  select {
+    padding: 8px 30px 8px 15px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAOCAMAAADzLXfBAAAAw1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAcKsgAAAAQXRSTlMAAlQrJFgERoB1CHBcBTJ9IBV0XyExFHNhBhJFE3FiB2tZEWRdaRBvZglLD25nCjV8HA5saAsifn8uDXhDDGpWARK+aA8AAACOSURBVHgBbcnZtoEAAAXQ073kVJJ5pswRIWUe/P9X0YpWqf26kUL4+weQyYqIy1GSISrMq4gqUCsCKJVZiUZVYw2+eoPNFr7aEjsIdHvs6wjIBgcCPoYKRzJ8wpgTHaHpjOYcbwtKFiKsJVc2sOZmixhnR9fbH44n/DgbNC68IuF2Jx9PJHmuqSKN7SD0AsavCpa5FRVLAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 13px) center;
+    background-size: 13px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
   }
 }
 .checkout__main-info {

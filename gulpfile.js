@@ -20,7 +20,7 @@ var paths = {
         {
             dist: 'checkout.min.js',
             contains: [
-                'app/js/jquery.websters-select.js',
+                //'app/js/jquery.websters-select.js',
                 'app/js/jquery.checkout.js'
             ]
         }
