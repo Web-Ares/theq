@@ -296,6 +296,8 @@
 }
 .checkout__result {
   width: 100%;
+  border: none !important;
+  margin: 0 !important;
 
   thead {
     display: none;
@@ -313,18 +315,15 @@
         width: 30%;
         font-weight: 500;
         text-align: right;
-        padding: 11px 0;
+        padding: 11px 0 !important;
+        border: none !important;
 
         &:first-child {
           width: 70%;
           font-weight: 300;
           text-align: left;
-          padding: 11px 0;
+          padding: 11px 0 !important;
         }
-
-      }
-
-      td {
 
       }
 
@@ -348,16 +347,18 @@
 
       th {
         width: 70%;
-        font-weight: 300;
+        font-weight: 300 !important;
         text-align: left;
-        padding: 11px 0;
+        padding: 11px 0 !important;
+        border: none !important;
       }
 
       td {
         width: 30%;
         font-weight: 500;
         text-align: right;
-        padding: 11px 0;
+        padding: 11px 0 !important;
+        border: none !important;
       }
 
       .amount {
@@ -371,6 +372,7 @@
     .order-total {
       th {
         text-transform: uppercase;
+        font-weight: 500 !important;
       }
     }
     .shipping {
@@ -381,7 +383,6 @@
           width: 40%;
           float: left;
           font-weight: 300;
-          //padding: 11px 0;
           text-align: left;
         }
 
