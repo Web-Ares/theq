@@ -257,7 +257,7 @@
         <div class="container container--s col-2 clearfix">
 
             <!-- checkout -->
-            <div class="checkout">
+            <form action="#" class="checkout">
 
                 <div class="checkout__main-info">
 
@@ -454,52 +454,50 @@
                         <h2 class="checkout__title">Order Summary</h2>
                         <!-- /checkout__title -->
 
-                        <form action="#">
+                        <!-- checkout__order -->
+                        <div class="checkout__order" data-product-id="1" data-product-key="1">
+                            <div>
 
-                            <!-- checkout__order -->
-                            <div class="checkout__order" data-product-id="1" data-product-key="1">
-                                <div>
-
-                                    <!-- checkout__order -->
-                                    <a href="#" class="checkout__order-pic">
-                                        <img src="pic/prod.jpg" width="166" height="194" alt="">
-                                    </a>
-                                    <!-- checkout__order -->
-
-                                </div>
-                                <div>
-                                    <h3 class="checkout__order-title">Malachite The
-                                        Little Finger Ring</h3>
-
-                                    <!-- checkout__quantity -->
-                                    <div class="checkout__quantity">
-                                        <label for="quantity">Quantity:</label>
-                                        <input type="number" min="1" name="quantity" id="quantity" class="checkout__field" value="1">
-                                    </div>
-                                    <!-- /checkout__quantity -->
-
-
-                                </div>
-                            </div>
-                            <!-- /checkout__order -->
-
-                            <!-- checkout__coupon -->
-                            <div class="checkout__coupon">
-
-                                <div class="checkout__coupon-info">
-                                    <input type="text" class="" name="coupon" id="coupon" placeholder="enter promo code">
-                                    <button type="button" class="checkout__coupon-send">APPLY</button>
-                                    <span class="checkout__coupon-error">promo code is not valid</span>
-                                </div>
-
-                                <div class="checkout__coupon-applied">
-                                    promo code applied
-                                </div>
+                                <!-- checkout__order -->
+                                <a href="#" class="checkout__order-pic">
+                                    <img src="pic/prod.jpg" width="166" height="194" alt="">
+                                </a>
+                                <!-- checkout__order -->
 
                             </div>
-                            <!-- /checkout__coupon -->
+                            <div>
+                                <h3 class="checkout__order-title">Malachite The
+                                    Little Finger Ring</h3>
 
-                            <table class="shop_table woocommerce-checkout-review-order-table checkout__result">
+                                <!-- checkout__quantity -->
+                                <div class="checkout__quantity">
+                                    <label for="quantity">Quantity:</label>
+                                    <input type="number" min="1" name="quantity" id="quantity" class="checkout__field" value="1">
+                                </div>
+                                <!-- /checkout__quantity -->
+
+
+                            </div>
+                        </div>
+                        <!-- /checkout__order -->
+
+                        <!-- checkout__coupon -->
+                        <div class="checkout__coupon">
+
+                            <div class="checkout__coupon-info">
+                                <input type="text" class="" name="coupon" id="coupon" placeholder="enter promo code">
+                                <button type="button" class="checkout__coupon-send">APPLY</button>
+                                <span class="checkout__coupon-error">promo code is not valid</span>
+                            </div>
+
+                            <div class="checkout__coupon-applied">
+                                promo code applied
+                            </div>
+
+                        </div>
+                        <!-- /checkout__coupon -->
+
+                        <table class="shop_table woocommerce-checkout-review-order-table checkout__result">
                                 <thead>
                                 <tr>
                                     <th class="product-name">Product</th>
@@ -548,12 +546,8 @@
                                 </tfoot>
                             </table>
 
-                        </form>
-
                     </div>
                     <!-- /checkout__items -->
-
-                    <div></div>
 
                 </div>
                 <div class="checkout__main-info">
@@ -578,7 +572,17 @@
 
                 </div>
 
-            </div>
+                <div id="ship-to-different-address" class="checkout-title custom-checkbox checkout__fields_focus">
+                    <input id="ship-to-different-address-checkbox" class="input-checkbox" type="checkbox" name="ship_to_different_address" value="1">
+                    <label for="ship-to-different-address-checkbox" class="checkbox">
+                        <span></span>
+                        Ship to a different address?
+                    </label>
+                </div>
+
+                <button type="submit" class="checkout__send">send</button>
+
+            </form>
             <!-- /checkout -->
 
         </div>

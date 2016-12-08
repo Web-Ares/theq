@@ -31,6 +31,11 @@
     -webkit-transition: border 0.3s ease;
     transition: border 0.3s ease;
 
+    &.not-touched,
+    &.not-valid {
+      border-color: #ed1b24 !important;
+    }
+
     &:focus {
       border-color: #707070;
     }

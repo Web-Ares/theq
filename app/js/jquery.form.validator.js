@@ -18,9 +18,7 @@
             _obj = obj,
             _fields = _obj.find( '[data-required]' ),
             _window = $(window),
-            _back = _obj.find( '.checkout__back' ),
-            _proceedPayment = _obj.find( '.checkout__proceed-payment' ),
-            _btn = _obj.find( '.checkout__proceed .btn' );
+            _btn = _obj.find( '.checkout__send' );
 
         //private methods
         var _constructor = function () {
@@ -33,9 +31,10 @@
 
                     var curItem = $(this);
 
-                    if( curItem.parents('.checkout__info-billing').length ) {
 
-                        if( curItem.parents('.checkout__info-billing').hasClass('visible') ) {
+                    if( curItem.parents('.shipping_address').length ) {
+
+                        if( $('#ship-to-different-address-checkbox').prop('checked') ) {
 
                             if( curItem.val() === '' ){
 
@@ -59,7 +58,6 @@
 
                     }
 
-
                 } );
 
             },
@@ -67,7 +65,7 @@
                 _window.on( {
                     load: function() {
 
-                        $( 'body' ).trigger( 'update_checkout' );
+                        //$( 'body' ).trigger( 'update_checkout' );
 
                     }
                 } );
@@ -107,30 +105,14 @@
                             _obj.find('.not-touched:first').focus();
                             _obj.find('.not-valid:first').focus();
 
-                        } else {
-
-                            $('.checkout__form').addClass('hidden');
-                            $('.my-cart__review').addClass('visible');
-                            $( 'body' ).trigger( 'update_checkout' );
-
-                            _checkBlock();
+                            return false;
 
                         }
+                        else {
 
-                        return false;
+                            return true;
 
-                    }
-                } );
-                _back.on( {
-                    click: function() {
-
-                        $('.checkout__form').removeClass('hidden');
-                        $('.my-cart__review').removeClass('visible');
-
-                        //cancelRequestAnimFrame(  );
-
-
-                        return false;
+                        }
 
                     }
                 } );
@@ -146,29 +128,6 @@
             _validateEmail = function ( email ) {
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(email);
-            },
-            _checkBlock = function () {
-
-                requestAnimationFrame( _checkBlock );
-                _loop();
-
-            },
-            _loop = function() {
-
-                if( _obj.find('.shipping_method-success').length ) {
-
-                    $('#payment').addClass('visible');
-                    _back.addClass('hidden');
-                    _proceedPayment.addClass('visible');
-
-                } else {
-
-                    $('#payment').removeClass('visible');
-                    _back.removeClass('hidden');
-                    _proceedPayment.removeClass('visible');
-
-                }
-
             },
             _validateField = function ( field ) {
                 var type = field.attr( 'type' );
