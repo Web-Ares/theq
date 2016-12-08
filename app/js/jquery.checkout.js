@@ -15,6 +15,12 @@
 
         } );
 
+        $.each( $('.dynamic_states'), function () {
+
+            new CurrentState( $(this) );
+
+        } );
+
     } );
 
     var LabelForm = function ( obj ) {
@@ -210,7 +216,7 @@
                     type: "get",
                     success: function (m) {
 
-                        console.log(m);
+
 
                     },
                     error: function (XMLHttpRequest) {
@@ -275,4 +281,71 @@
         _init();
     };
 
+    var CurrentState = function (obj) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _request = new XMLHttpRequest(),
+            _input = _obj.find('input');
+
+        //private methods
+        var _addEvents = function () {
+
+
+
+                _obj.on( {
+                    change: function() {
+                        _requestCountChange($(this).find('select').val());
+                        return false;
+                    }
+                } );
+
+            },
+            
+            _requestCountChange = function ( elem ) {
+
+
+                _request.abort();
+                _request = $.ajax( {
+                    url: $('body').attr('data-action'),
+                    data: {
+                        action: 'get_states_by_countries',
+                        country: elem
+                    },
+                    dataType: 'html',
+                    type: "get",
+                    success: function (m) {
+
+                        if(_obj.parents('.woocommerce-billing-fields').length){
+                            $('.billing_current_states').html(''); 
+                            $('.billing_current_states').html(m); 
+                       
+                        } else {
+                            $('.shipping_current_states').html('');
+                            $('.shipping_current_states').html(m);
+                        }
+                        
+                    },
+                    error: function (XMLHttpRequest) {
+                        if ( XMLHttpRequest.statusText != "abort" ) {
+                            alert("ERROR!!!");
+                        }
+                    }
+                } );
+
+            },
+            
+            _init = function () {
+                _obj[0].obj = _self;
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+
+        _init();
+    };
 } )();
