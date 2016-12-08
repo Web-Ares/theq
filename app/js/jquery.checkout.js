@@ -316,7 +316,7 @@
                     dataType: 'html',
                     type: "get",
                     success: function (m) {
-
+                        
                         if(_obj.parents('.woocommerce-billing-fields').length){
                             $('.billing_current_states').html(''); 
                             $('.billing_current_states').html(m); 
@@ -325,7 +325,8 @@
                             $('.shipping_current_states').html('');
                             $('.shipping_current_states').html(m);
                         }
-                        
+
+                        $( 'body' ).trigger( 'update_checkout' );
                     },
                     error: function (XMLHttpRequest) {
                         if ( XMLHttpRequest.statusText != "abort" ) {
@@ -348,4 +349,5 @@
 
         _init();
     };
+
 } )();
