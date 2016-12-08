@@ -295,110 +295,115 @@
 
 }
 .checkout__result {
-  width: 100%;
-  border: none !important;
-  margin: 0 !important;
 
-  thead {
-    display: none;
-  }
-  tbody {
-    color: #878686;
-    font-size: 16px;
-    line-height: 16px;
+  &.shop_table {
 
-    tr {
-      vertical-align: top;
+    width: 100%;
+    border: none !important;
+    margin: 0 !important;
 
-      td {
+    thead {
+      display: none;
+    }
+    tbody {
+      color: #878686;
+      font-size: 16px;
+      line-height: 16px;
 
-        width: 30%;
-        font-weight: 500;
-        text-align: right;
-        padding: 11px 0 !important;
-        border: none !important;
+      tr {
+        vertical-align: top;
 
-        &:first-child {
+        td {
+
+          width: 30%;
+          font-weight: 500;
+          text-align: right;
+          padding: 11px 0 !important;
+          border: none !important;
+
+          &:first-child {
+            width: 70%;
+            font-weight: 300;
+            text-align: left;
+            padding: 11px 0 !important;
+          }
+
+        }
+
+        .amount {
+          display: block;
+          width: 100%;
+          max-width: 112px;
+          float: right;
+        }
+
+      }
+
+    }
+    tfoot {
+      color: #878686;
+      font-size: 16px;
+      line-height: 16px;
+
+      tr {
+        vertical-align: top;
+
+        th {
           width: 70%;
-          font-weight: 300;
+          font-weight: 300 !important;
           text-align: left;
           padding: 11px 0 !important;
+          border: none !important;
         }
 
-      }
-
-      .amount {
-        display: block;
-        width: 100%;
-        max-width: 112px;
-        float: right;
-      }
-
-    }
-
-  }
-  tfoot {
-    color: #878686;
-    font-size: 16px;
-    line-height: 16px;
-
-    tr {
-      vertical-align: top;
-
-      th {
-        width: 70%;
-        font-weight: 300 !important;
-        text-align: left;
-        padding: 11px 0 !important;
-        border: none !important;
-      }
-
-      td {
-        width: 30%;
-        font-weight: 500;
-        text-align: right;
-        padding: 11px 0 !important;
-        border: none !important;
-      }
-
-      .amount {
-        display: block;
-        width: 100%;
-        max-width: 112px;
-        float: right;
-      }
-
-    }
-    .order-total {
-      th {
-        text-transform: uppercase;
-        font-weight: 500 !important;
-      }
-    }
-    .shipping {
-
-      td {
-
-        .shipping__title {
-          width: 40%;
-          float: left;
-          font-weight: 300;
-          text-align: left;
-        }
-
-        p {
-          width: 50%;
-          display: inline-block;
-          float: right;
-        }
-        .shipping_method-success {
-          width: 60%;
-          display: inline-block;
-          float: right;
+        td {
+          width: 30%;
+          font-weight: 500;
           text-align: right;
+          padding: 11px 0 !important;
+          border: none !important;
+        }
 
-          #shipping_method {
+        .amount {
+          display: block;
+          width: 100%;
+          max-width: 112px;
+          float: right;
+        }
+
+      }
+      .order-total {
+        th {
+          text-transform: uppercase;
+          font-weight: 500 !important;
+        }
+      }
+      .shipping {
+
+        td {
+
+          .shipping__title {
+            width: 40%;
+            float: left;
+            font-weight: 300;
             text-align: left;
+          }
+
+          p {
+            width: 50%;
+            display: inline-block;
+            float: right;
+          }
+          .shipping_method-success {
+            width: 60%;
+            display: inline-block;
+            float: right;
+            text-align: right;
+
+            #shipping_method {
+              text-align: left;
+            }
+
           }
 
         }
@@ -408,6 +413,7 @@
     }
 
   }
+
 
 }
 .checkout__payment {
@@ -650,29 +656,33 @@
   }
   .checkout__result {
 
-    tbody {
-      color: #878686;
-      font-size: 16px;
-      line-height: 16px;
+    &.shop_table {
 
-      tr {
+      tbody {
+        color: #878686;
+        font-size: 16px;
+        line-height: 16px;
 
-        td {
-          text-align: left;
+        tr {
+
+          td {
+            text-align: left;
+          }
+
         }
 
       }
+      tfoot {
+        color: #878686;
+        font-size: 16px;
+        line-height: 16px;
 
-    }
-    tfoot {
-      color: #878686;
-      font-size: 16px;
-      line-height: 16px;
+        tr {
 
-      tr {
+          td {
+            text-align: left;
+          }
 
-        td {
-          text-align: left;
         }
 
       }
