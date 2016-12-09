@@ -99,6 +99,7 @@
   position: relative;
   margin: 0 0 15px;
 
+  &:after,
   &:before {
     display: none !important;
   }
