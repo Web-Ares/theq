@@ -19,7 +19,7 @@
             _fields = _obj.find( '[data-required]' ),
             _window = $(window),
             _btn = _obj.find( '.checkout__send' );
-
+  
         //private methods
         var _constructor = function () {
                 _onEvents();
@@ -62,6 +62,12 @@
 
             },
             _onEvents = function () {
+                
+                _obj.on({
+                    submit: function () {
+                        return false;
+                    }
+                });
                 _window.on( {
                     load: function() {
 
@@ -97,22 +103,24 @@
                 } );
                 _btn.on( {
                     click: function() {
+          
+                        return false;
 
-                        _addNotTouchedClass();
-
-                        if( _fields.hasClass('not-touched') || _fields.hasClass('not-valid') ) {
-
-                            _obj.find('.not-touched:first').focus();
-                            _obj.find('.not-valid:first').focus();
-
-                            return false;
-
-                        }
-                        else {
-
-                            return true;
-
-                        }
+                        // _addNotTouchedClass();
+                        //
+                        // if( _fields.hasClass('not-touched') || _fields.hasClass('not-valid') ) {
+                        //
+                        //     _obj.find('.not-touched:first').focus();
+                        //     _obj.find('.not-valid:first').focus();
+                        //
+                        //     return false;
+                        //
+                        // }
+                        // else {
+                        //
+                        //     return true;
+                        //
+                        // }
 
                     }
                 } );
