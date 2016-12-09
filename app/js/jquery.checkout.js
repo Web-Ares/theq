@@ -183,15 +183,13 @@
                     }
                 } );
 
-                _inputQuantity.on( {
-                    keyup: function () {
-
-                        _requestCountChange( $(this) );
-
-                    }
-                } );
+            
                 _inputQuantity.on( {
                     change: function () {
+                        
+                        _requestCountChange( $(this) );
+                    },
+                    keyup: function () {
 
                         _requestCountChange( $(this) );
 
@@ -209,14 +207,13 @@
                         action: 'cart_quantity_changes',
                         id: elem.parents('.checkout__order').attr('data-product-id'),
                         key: elem.parents('.checkout__order').attr('data-product-key'),
-                        countProduct: elem.val(),
-                        flag: 'changeCount'
+                        countProduct: elem.val()
                     },
-                    dataType: 'json',
+                    dataType: 'html',
                     type: "get",
                     success: function (m) {
-
-
+                        
+                        $( 'body' ).trigger( 'update_checkout' );
 
                     },
                     error: function (XMLHttpRequest) {
@@ -241,13 +238,14 @@
                     type: "get",
                     success: function (m) {
 
+                        console.log(m);
                         setTimeout( function() {
 
                             if( m.status == 1 ) {
 
                                 _couponWrap.removeClass('error');
                                 _couponWrap.addClass('applied');
-
+                                $( 'body' ).trigger( 'update_checkout' );
 
                             } else {
 
@@ -287,8 +285,11 @@
         var _self = this,
             _obj = obj,
             _request = new XMLHttpRequest(),
-            _input = _obj.find('input');
-
+            _input = _obj.find('input'),
+            _shipment = _obj.find('select').attr('id');
+        
+ 
+        
         //private methods
         var _addEvents = function () {
 
@@ -305,13 +306,17 @@
             
             _requestCountChange = function ( elem ) {
 
+               
 
+                console.log(elem);
+                
                 _request.abort();
                 _request = $.ajax( {
                     url: $('body').attr('data-action'),
                     data: {
                         action: 'get_states_by_countries',
-                        country: elem
+                        country: elem,
+                        shipment: _shipment
                     },
                     dataType: 'html',
                     type: "get",
