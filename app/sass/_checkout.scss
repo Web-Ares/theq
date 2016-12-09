@@ -129,9 +129,19 @@
 }
 .checkout__two-field {
   margin: 0 0 15px;
+
+  &:after,
+  &:before {
+    display: none !important;
+  }
 }
 .checkout__three-field {
   margin: 0 0 15px;
+
+  &:after,
+  &:before {
+    display: none !important;
+  }
 }
 .checkout__shipping-method {
   padding: 9px 0 7px;
