@@ -1,0 +1,41 @@
+.woocommerce-message {
+  border: none;
+
+  &:before {
+    display: none;
+  }
+
+}
+.woocommerce .woocommerce-message a.button,
+.woocommerce .woocommerce-message button.button,
+.woocommerce .woocommerce-message  input.button {
+  font-size: 14px;
+  color: #fff;
+  padding: 13px 35px;
+  background: #8c3c3c;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background .2s,border-color .2s;
+  margin: 0;
+  line-height: 14px;
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+  font-weight: 500;
+  border-radius: 0;
+  left: auto;
+  white-space: nowrap;
+  display: inline-block;
+  background-image: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  text-shadow: none;
+
+  &:hover{
+    background-color: transparent;
+    color: #8c3c3c;
+    background: none;
+    border-color: #8c3c3c;
+  }
+
+}
