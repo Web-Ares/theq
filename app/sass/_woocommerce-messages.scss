@@ -1,3 +1,5 @@
+.woocommerce-error,
+.woocommerce-info,
 .woocommerce-message {
   border: none;
 
@@ -7,8 +9,14 @@
 
 }
 .woocommerce .woocommerce-message a.button,
+.woocommerce .woocommerce-info a.button,
+.woocommerce .woocommerce-error a.button,
 .woocommerce .woocommerce-message button.button,
-.woocommerce .woocommerce-message  input.button {
+.woocommerce .woocommerce-info button.button,
+.woocommerce .woocommerce-error button.button,
+.woocommerce .woocommerce-message  input.button,
+.woocommerce .woocommerce-info  input.button,
+.woocommerce .woocommerce-error  input.button {
   font-size: 14px;
   color: #fff;
   padding: 13px 35px;
