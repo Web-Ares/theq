@@ -152,6 +152,7 @@
             _inputCoupon = _couponWrap.find('input'),
             _quantity = _obj.find('.checkout__quantity'),
             _inputQuantity = _quantity.find('input'),
+            _btnRemoveProduct = _obj.find('.remove_product'),
             //_discount = $('.my-cart__discount'),
             //_define = $('.my-cart__define'),
             //_applied = $('.my-cart__applied'),
@@ -196,6 +197,24 @@
                     }
                 } );
 
+                _btnRemoveProduct.on( {
+                    click: function () {
+
+                            var _curElem = $(this);
+                        
+                            setTimeout( function() {
+
+                                _requestProductRemove( _curElem.attr('data-id'), _curElem.parent() );
+
+                            }, 500 );
+
+                        
+                        return false;
+
+                    }
+
+
+                } );
 
             },
             _requestCountChange = function ( elem ) {
@@ -238,7 +257,7 @@
                     type: "get",
                     success: function (m) {
 
-                        console.log(m);
+                      
                         setTimeout( function() {
 
                             if( m.status == 1 ) {
@@ -264,6 +283,55 @@
                         }
                     }
                 } );
+
+            },
+            _requestProductRemove = function ( elem, parent ) {
+
+                _request.abort();
+                _request = $.ajax( {
+                    url: $('body').attr('data-action'),
+                    data: {
+                        action: 'remove_cart_item',
+                        id: elem,
+                        flag: 'remove'
+                    },
+                    dataType: 'json',
+                    type: "get",
+                    success: function (m) {
+                        
+                     
+                        
+                        _removeProduct( parent );
+
+                        if( parseInt(m.cartCountProducts) == 0 ) {
+
+                           location.href='/shop';
+
+
+                        } else {
+                        
+                            $( 'body' ).trigger( 'update_checkout' );
+
+                        }
+                        
+                    },
+                    error: function (XMLHttpRequest) {
+                        if ( XMLHttpRequest.statusText != "abort" ) {
+                            alert("ERROR!!!");
+                        }
+                    }
+                } );
+
+            },
+            _removeProduct = function( elem ) {
+
+                elem.addClass('hidden');
+
+                setTimeout( function() {
+
+                    elem.remove();
+
+                }, 500 );
 
             },
             _init = function () {
@@ -308,7 +376,7 @@
 
                
 
-                console.log(elem);
+             
                 
                 _request.abort();
                 _request = $.ajax( {
